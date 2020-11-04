@@ -7,4 +7,12 @@
 <h2 id="解析的IP地址"><a href="#解析的IP地址" class="headerlink" title="解析的IP地址"></a>解析的IP地址</h2><p>解析域名，需要我们提供一个IP地址，我是直接输入了教程中的github的服务器ip,实际应该Ping一下自己的网址，将返回的ip地址输入到域名解析的记录值中。<br><img src="/images/2.png" alt="pic"></p>
 </body></html>]]></content>
   </entry>
+  <entry>
+    <title>hexo+github pages搭建博客踩的坑</title>
+    <url>/2020/11/04/hexo-github-pages%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E8%B8%A9%E7%9A%84%E5%9D%91/</url>
+    <content><![CDATA[<html><head></head><body></body></html><html><head></head><body><p>记录一下在使用hexo+github pages构建自己博客的过程中踩到的坑。</p>
+<h2 id="实名认证"><a href="#实名认证" class="headerlink" title="实名认证"></a>实名认证</h2><p>当我们购买成功阿里云域名后，需要将域名进行解析，才能够通过域名访问我们希望访问的地址，但是一定要注意，某些域名必须实名认证才能解析生效，本人在这里排查了好久问题。<br><img src="/.top//1.png" alt="pic"></p>
+<h2 id="解析的IP地址"><a href="#解析的IP地址" class="headerlink" title="解析的IP地址"></a>解析的IP地址</h2><p>解析域名，需要我们提供一个IP地址，我是直接输入了教程中的github的服务器ip,实际应该Ping一下自己的网址，将返回的ip地址输入到域名解析的记录值中。<br><img src="/.top//2.png" alt="pic"></p>
+</body></html>]]></content>
+  </entry>
 </search>
