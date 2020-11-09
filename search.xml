@@ -13,4 +13,17 @@
         <tag>踩坑</tag>
       </tags>
   </entry>
+  <entry>
+    <title>jar包和war包的区别</title>
+    <url>/2020/11/09/jar%E5%8C%85%E5%92%8Cwar%E5%8C%85%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+    <content><![CDATA[<p>简述jar包和war包区别。</p>
+<a id="more"></a>
+
+<h2 id="jar"><a href="#jar" class="headerlink" title="jar"></a>jar</h2><p>JAR包是类的归档文件，JAR 文件格式以流行的 ZIP 文件格式为基础。与 ZIP 文件不同的是，JAR 文件不仅用于压缩和发布，而且还用于部署和封装库、组件和插件程序，并可被像编译器和 JVM 这样的工具直接使用。<br>jar包里的com里放的就是class文件，②配置文件，但是没有静态资源的文件,③大多数 JAR 文件包含一个 META-INF 目录，它用于存储包和扩展的配置数据，如安全性和版本信息</p>
+<h2 id="war"><a href="#war" class="headerlink" title="war"></a>war</h2><p>war包是JavaWeb程序打的包，war包里面包括写的代码编译成的class文件，依赖的包，配置文件，所有的网站页面，包括html，jsp等等。一个war包可以理解为是一个web项目，里面是项目的所有东西。<br>war包里的①WEB-INF里放的class文件和配置文件，②META-INF和jar包作用一样③war包里还包含静态资源的文件</p>
+]]></content>
+      <tags>
+        <tag>知识点</tag>
+      </tags>
+  </entry>
 </search>
