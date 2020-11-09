@@ -26,4 +26,20 @@
         <tag>知识点</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCdoe1-两数之和</title>
+    <url>/2020/11/09/LeetCdoe1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <content><![CDATA[<p>LeetCode题解</p>
+<a id="more"></a>
+<p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。</p>
+<p> </p>
+<p>示例:</p>
+<p>给定 nums = [2, 7, 11, 15], target = 9</p>
+<p>因为 nums[0] + nums[1] = 2 + 7 = 9<br>所以返回 [0, 1]</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] twoSum(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target) &#123;</span><br><span class="line">        <span class="keyword">int</span>[] res=&#123;<span class="number">0</span>,<span class="number">0</span>&#125;;</span><br><span class="line">        HashMap&lt;Integer,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            map.put(nums[i],i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(target-nums[i]))&#123;</span><br><span class="line">                <span class="keyword">if</span>(i!=map.get(target-nums[i]))&#123;</span><br><span class="line">                    res[<span class="number">0</span>]=map.get(target-nums[i]);</span><br><span class="line">                    res[<span class="number">1</span>]=i;</span><br><span class="line">                &#125;  </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
