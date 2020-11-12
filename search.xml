@@ -27,8 +27,8 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCdoe1-两数之和</title>
-    <url>/2020/11/09/LeetCdoe1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+    <title>LeetCode1-两数之和</title>
+    <url>/2020/11/09/LeetCode1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
     <content><![CDATA[<p>LeetCode题解</p>
 <a id="more"></a>
 <p>给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。</p>
@@ -44,8 +44,24 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCdoe2-两数相加</title>
-    <url>/2020/11/10/LeetCdoe2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</url>
+    <title>LeetCode3-无重复字符的最长子串</title>
+    <url>/2020/11/11/LeetCode3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</url>
+    <content><![CDATA[<p>LeetCode题解</p>
+<a id="more"></a>
+<p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
+<p>示例 1:</p>
+<p>输入: “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
+<p>输入: “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
+<p>输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p>
+<p>来源：力扣（LeetCode）</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length()==<span class="number">0</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cur=<span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Character,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            res=Math.max(res,i-cur);</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(s.charAt(i))&amp;&amp;map.get(s.charAt(i))&gt;=cur)&#123;</span><br><span class="line">                cur=map.get(s.charAt(i))+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(s.charAt(i),i);</span><br><span class="line">        &#125;</span><br><span class="line">        res=Math.max(res,i-cur);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode2-两数相加</title>
+    <url>/2020/11/10/LeetCode2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/</url>
     <content><![CDATA[<p>LeetCode题解</p>
 <a id="more"></a>
 <p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
@@ -60,17 +76,41 @@
       </tags>
   </entry>
   <entry>
-    <title>LeetCdoe3-无重复字符的最长子串</title>
-    <url>/2020/11/11/LeetCdoe3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/</url>
+    <title>LeetCode4-寻找两个正序数组的中位数</title>
+    <url>/2020/11/12/LeetCode4-%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/</url>
     <content><![CDATA[<p>LeetCode题解</p>
 <a id="more"></a>
-<p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
-<p>示例 1:</p>
-<p>输入: “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
-<p>输入: “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
-<p>输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p>
+<p>给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出并返回这两个正序数组的中位数。</p>
+<p>进阶：你能设计一个时间复杂度为 O(log (m+n)) 的算法解决此问题吗？</p>
+<p> </p>
+<p>示例 1：</p>
+<p>输入：nums1 = [1,3], nums2 = [2]<br>输出：2.00000<br>解释：合并数组 = [1,2,3] ，中位数 2<br>示例 2：</p>
+<p>输入：nums1 = [1,2], nums2 = [3,4]<br>输出：2.50000<br>解释：合并数组 = [1,2,3,4] ，中位数 (2 + 3) / 2 = 2.5<br>示例 3：</p>
+<p>输入：nums1 = [0,0], nums2 = [0,0]<br>输出：0.00000<br>示例 4：</p>
+<p>输入：nums1 = [], nums2 = [1]<br>输出：1.00000<br>示例 5：</p>
+<p>输入：nums1 = [2], nums2 = []<br>输出：2.00000
+ </p>
+<p>提示：</p>
+<p>nums1.length == m<br>nums2.length == n<br>0 &lt;= m &lt;= 1000<br>0 &lt;= n &lt;= 1000<br>1 &lt;= m + n &lt;= 2000<br>-106 &lt;= nums1[i], nums2[i] &lt;= 106</p>
 <p>来源：力扣（LeetCode）</p>
- <figure class="highlight java"><table><tr><td class="code"><pre><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length()==<span class="number">0</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cur=<span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Character,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            res=Math.max(res,i-cur);</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(s.charAt(i))&amp;&amp;map.get(s.charAt(i))&gt;=cur)&#123;</span><br><span class="line">                cur=map.get(s.charAt(i))+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(s.charAt(i),i);</span><br><span class="line">        &#125;</span><br><span class="line">        res=Math.max(res,i-cur);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> total=nums1.length+nums2.length;</span><br><span class="line">        <span class="keyword">if</span>(total%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> k=total/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">double</span> d=(findKthNum(nums1,nums2,k)+findKthNum(nums1,nums2,k+<span class="number">1</span>))/<span class="number">2.0</span>;</span><br><span class="line">            <span class="keyword">return</span> d;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">int</span> k=total/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">double</span> d =findKthNum(nums1,nums2,k+<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">return</span> d;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">findKthNum</span><span class="params">(<span class="keyword">int</span>[] nums1,<span class="keyword">int</span>[] nums2,<span class="keyword">int</span> k)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> r1=<span class="number">0</span>,r2=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> l1=nums1.length,l2=nums2.length;</span><br><span class="line">        <span class="keyword">int</span> index1=<span class="number">0</span>,index2=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(r1==l1)&#123;</span><br><span class="line">                <span class="keyword">return</span> nums2[r2+k-<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(r2==l2)&#123;</span><br><span class="line">                <span class="keyword">return</span> nums1[r1+k-<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(k==<span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> Math.min(nums1[r1],nums2[r2]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> cur=k/<span class="number">2</span>;</span><br><span class="line">            index1=Math.min(r1+cur,l1)-<span class="number">1</span>;</span><br><span class="line">            index2=Math.min(r2+cur,l2)-<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(nums1[index1]&lt;=nums2[index2])&#123;</span><br><span class="line">                k-=(index1-r1+<span class="number">1</span>);</span><br><span class="line">                r1=index1+<span class="number">1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                k-=(index2-r2+<span class="number">1</span>);</span><br><span class="line">                r2=index2+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>LeetCode922-按奇偶排序数组 II</title>
+    <url>/2020/11/12/LeetCode922-%E6%8C%89%E5%A5%87%E5%81%B6%E6%8E%92%E5%BA%8F%E6%95%B0%E7%BB%84%20II/</url>
+    <content><![CDATA[<p>LeetCode题解</p>
+<a id="more"></a>
+<p>给定一个非负整数数组 A， A 中一半整数是奇数，一半整数是偶数。</p>
+<p>对数组进行排序，以便当 A[i] 为奇数时，i 也是奇数；当 A[i] 为偶数时， i 也是偶数。</p>
+<p>你可以返回任何满足上述条件的数组作为答案。</p>
+<p> </p>
+<p>示例：</p>
+<p>输入：[4,2,5,7]<br>输出：[4,5,2,7]<br>解释：[4,7,2,5]，[2,5,4,7]，[2,7,4,5] 也会被接受</p>
+<p>来源：力扣（LeetCode）</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortArrayByParityII(<span class="keyword">int</span>[] A) &#123;</span><br><span class="line">        <span class="keyword">int</span> left=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right=A.length-<span class="number">1</span>;</span><br><span class="line">       <span class="keyword">for</span>(left=<span class="number">0</span>;left&lt;A.length;left++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(((left%<span class="number">2</span>)==<span class="number">0</span>&amp;&amp;(A[left]%<span class="number">2</span>)==<span class="number">0</span>)||((left%<span class="number">2</span>)==<span class="number">1</span>&amp;&amp;(A[left]%<span class="number">2</span>)==<span class="number">1</span>))&#123;</span><br><span class="line">               <span class="keyword">continue</span>;</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               right=A.length-<span class="number">1</span>;</span><br><span class="line">               <span class="keyword">if</span>(left%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                   <span class="keyword">while</span>(A[right]%<span class="number">2</span>==<span class="number">1</span>)&#123;</span><br><span class="line">                       right--;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                   <span class="keyword">while</span>(A[right]%<span class="number">2</span>==<span class="number">0</span>)&#123;</span><br><span class="line">                       right--;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">               swap(A,right,left);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">        <span class="keyword">return</span> A;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] A,<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp=A[i];</span><br><span class="line">        A[i]=A[j];</span><br><span class="line">        A[j]=temp;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <tags>
         <tag>LeetCode</tag>
       </tags>

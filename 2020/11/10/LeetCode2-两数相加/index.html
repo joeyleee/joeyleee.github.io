@@ -52,18 +52,18 @@
 
   <meta name="description" content="LeetCode题解">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCdoe3-无重复字符的最长子串">
-<meta property="og:url" content="https://joeyleee.top/2020/11/11/LeetCdoe3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/index.html">
+<meta property="og:title" content="LeetCode2-两数相加">
+<meta property="og:url" content="https://joeyleee.top/2020/11/10/LeetCode2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/index.html">
 <meta property="og:site_name" content="Joey Blog">
 <meta property="og:description" content="LeetCode题解">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-11T00:02:11.000Z">
-<meta property="article:modified_time" content="2020-11-11T02:55:03.805Z">
+<meta property="article:published_time" content="2020-11-10T00:02:11.000Z">
+<meta property="article:modified_time" content="2020-11-12T05:56:59.021Z">
 <meta property="article:author" content="Joey">
 <meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://joeyleee.top/2020/11/11/LeetCdoe3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/">
+<link rel="canonical" href="https://joeyleee.top/2020/11/10/LeetCode2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">
 
 
 <script id="page-configurations">
@@ -77,7 +77,7 @@
   };
 </script>
 
-  <title>LeetCdoe3-无重复字符的最长子串 | Joey Blog</title>
+  <title>LeetCode2-两数相加 | Joey Blog</title>
   
 
 
@@ -196,7 +196,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://joeyleee.top/2020/11/11/LeetCdoe3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/">
+    <link itemprop="mainEntityOfPage" href="https://joeyleee.top/2020/11/10/LeetCode2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -209,7 +209,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          LeetCdoe3-无重复字符的最长子串
+          LeetCode2-两数相加
         </h1>
 
         <div class="post-meta">
@@ -218,10 +218,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-11-11 08:02:11 / 修改时间：10:55:03" itemprop="dateCreated datePublished" datetime="2020-11-11T08:02:11+08:00">2020-11-11</time>
+              <time title="创建时间：2020-11-10 08:02:11" itemprop="dateCreated datePublished" datetime="2020-11-10T08:02:11+08:00">2020-11-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-11-12 13:56:59" itemprop="dateModified" datetime="2020-11-12T13:56:59+08:00">2020-11-12</time>
+              </span>
 
           
 
@@ -236,13 +242,13 @@
       
         <p>LeetCode题解</p>
 <a id="more"></a>
-<p>给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。</p>
-<p>示例 1:</p>
-<p>输入: “abcabcbb”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “abc”，所以其长度为 3。<br>示例 2:</p>
-<p>输入: “bbbbb”<br>输出: 1<br>解释: 因为无重复字符的最长子串是 “b”，所以其长度为 1。<br>示例 3:</p>
-<p>输入: “pwwkew”<br>输出: 3<br>解释: 因为无重复字符的最长子串是 “wke”，所以其长度为 3。<br>     请注意，你的答案必须是 子串 的长度，”pwke” 是一个子序列，不是子串。</p>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+<p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
+<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+<p>示例：</p>
+<p>输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>输出：7 -&gt; 0 -&gt; 8<br>原因：342 + 465 = 807</p>
 <p>来源：力扣（LeetCode）</p>
- <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lengthOfLongestSubstring</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s.length()==<span class="number">0</span>)<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> cur=<span class="number">0</span>;</span><br><span class="line">        HashMap&lt;Character,Integer&gt; map=<span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;s.length();i++)&#123;</span><br><span class="line">            res=Math.max(res,i-cur);</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(s.charAt(i))&amp;&amp;map.get(s.charAt(i))&gt;=cur)&#123;</span><br><span class="line">                cur=map.get(s.charAt(i))+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            map.put(s.charAt(i),i);</span><br><span class="line">        &#125;</span><br><span class="line">        res=Math.max(res,i-cur);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        ListNode res=<span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode cur=res;</span><br><span class="line">        <span class="keyword">int</span> num=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> carry=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1!=<span class="keyword">null</span>||l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            num=<span class="number">0</span>;</span><br><span class="line">            num+=carry;</span><br><span class="line">            carry=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span>(l1!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                num+=l1.val;</span><br><span class="line">                l1=l1.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                num+=l2.val;</span><br><span class="line">                l2=l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            carry=num/<span class="number">10</span>;</span><br><span class="line">            num=num%<span class="number">10</span>;</span><br><span class="line">            cur.next=<span class="keyword">new</span> ListNode(num);</span><br><span class="line">            cur=cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(carry&gt;<span class="number">0</span>)&#123;</span><br><span class="line">            cur.next=<span class="keyword">new</span> ListNode(carry);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -258,14 +264,17 @@
 
           <div class="post-nav">
             <div class="post-nav-next post-nav-item">
-                <a href="/2020/11/10/LeetCdoe2-%E4%B8%A4%E6%95%B0%E7%9B%B8%E5%8A%A0/" rel="next" title="LeetCdoe2-两数相加">
-                  <i class="fa fa-chevron-left"></i> LeetCdoe2-两数相加
+                <a href="/2020/11/09/LeetCode1-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/" rel="next" title="LeetCode1-两数之和">
+                  <i class="fa fa-chevron-left"></i> LeetCode1-两数之和
                 </a>
             </div>
 
             <span class="post-nav-divider"></span>
 
             <div class="post-nav-prev post-nav-item">
+                <a href="/2020/11/11/LeetCode3-%E6%97%A0%E9%87%8D%E5%A4%8D%E5%AD%97%E7%AC%A6%E7%9A%84%E6%9C%80%E9%95%BF%E5%AD%90%E4%B8%B2/" rel="prev" title="LeetCode3-无重复字符的最长子串">
+                  LeetCode3-无重复字符的最长子串 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
       </footer>
