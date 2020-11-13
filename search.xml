@@ -115,4 +115,24 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode328-奇偶链表</title>
+    <url>/2020/11/13/LeetCode328-%E5%A5%87%E5%81%B6%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<p>LeetCode题解</p>
+<a id="more"></a>
+<p>给定一个单链表，把所有的奇数节点和偶数节点分别排在一起。请注意，这里的奇数节点和偶数节点指的是节点编号的奇偶性，而不是节点的值的奇偶性。</p>
+<p>请尝试使用原地算法完成。你的算法的空间复杂度应为 O(1)，时间复杂度应为 O(nodes)，nodes 为节点总数。</p>
+<p>示例 1:</p>
+<p>输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL<br>输出: 1-&gt;3-&gt;5-&gt;2-&gt;4-&gt;NULL<br>示例 2:</p>
+<p>输入: 2-&gt;1-&gt;3-&gt;5-&gt;6-&gt;4-&gt;7-&gt;NULL<br>输出: 2-&gt;3-&gt;6-&gt;7-&gt;1-&gt;5-&gt;4-&gt;NULL</p>
+<p>来源：力扣（LeetCode）</p>
+<p> </p>
+<p>示例：</p>
+<p>输入：[4,2,5,7]<br>输出：[4,5,2,7]<br>解释：[4,7,2,5]，[2,5,4,7]，[2,7,4,5] 也会被接受</p>
+<p>来源：力扣（LeetCode）</p>
+ <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">oddEvenList</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(head==<span class="keyword">null</span>||head.next==<span class="keyword">null</span>||head.next.next==<span class="keyword">null</span>)<span class="keyword">return</span> head;</span><br><span class="line">        ListNode even=head;</span><br><span class="line">        ListNode odd=head.next;</span><br><span class="line">        ListNode oddHead=odd;</span><br><span class="line">        <span class="keyword">while</span>(odd!=<span class="keyword">null</span>&amp;&amp;odd.next!=<span class="keyword">null</span>)&#123;</span><br><span class="line">           even.next=odd.next;</span><br><span class="line">           even=even.next;</span><br><span class="line">           odd.next=even.next;</span><br><span class="line">           odd=odd.next;</span><br><span class="line">        &#125;</span><br><span class="line">        even.next=oddHead;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
