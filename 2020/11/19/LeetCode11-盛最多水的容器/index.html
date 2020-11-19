@@ -50,18 +50,20 @@
   };
 </script>
 
-  <meta name="description" content="一个不想加班的沙雕菜逼程序猿">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Joey Blog">
-<meta property="og:url" content="https://joeyleee.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+  <meta name="description" content="LeetCode题解">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode11-盛最多水的容器">
+<meta property="og:url" content="https://joeyleee.top/2020/11/19/LeetCode11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="Joey Blog">
-<meta property="og:description" content="一个不想加班的沙雕菜逼程序猿">
+<meta property="og:description" content="LeetCode题解">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-19T01:11:11.000Z">
+<meta property="article:modified_time" content="2020-11-19T04:20:40.760Z">
 <meta property="article:author" content="Joey">
-<meta property="article:tag" content="Java,后端">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://joeyleee.top/tags/%E7%9F%A5%E8%AF%86%E7%82%B9/">
+<link rel="canonical" href="https://joeyleee.top/2020/11/19/LeetCode11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">
 
 
 <script id="page-configurations">
@@ -69,13 +71,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: 知识点 | Joey Blog</title>
+  <title>LeetCode11-盛最多水的容器 | Joey Blog</title>
   
 
 
@@ -189,70 +191,88 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">知识点
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://joeyleee.top/2020/11/19/LeetCode11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Joey">
+      <meta itemprop="description" content="一个不想加班的沙雕菜逼程序猿">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Joey Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LeetCode11-盛最多水的容器
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-11-19 09:11:11 / 修改时间：12:20:40" itemprop="dateCreated datePublished" datetime="2020-11-19T09:11:11+08:00">2020-11-19</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+        <p>LeetCode题解</p>
+<a id="more"></a>
+<p>给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
+<p>说明：你不能倾斜容器。</p>
+<p>来源：力扣（LeetCode）</p>
+ <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i=<span class="number">0</span>,j=height.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">            res=Math.max(res,Math.min(height[i],height[j])*(j-i));</span><br><span class="line">            <span class="keyword">if</span>(height[i]&gt;height[j])&#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-16T10:22:00+08:00"
-              content="2020-11-16">
-          11-16
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+          </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/11/16/%E5%9C%A8mybatis%E4%B8%AD%7B%7D%E5%92%8C$%7B%7D%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
-            <span itemprop="name">在mybatis中#{}和${}的区别</span>
-          </a>
-      </h2>
+        
 
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-next post-nav-item">
+                <a href="/2020/11/19/LeetCode283-%E7%A7%BB%E5%8A%A8%E9%9B%B6/" rel="next" title="LeetCode283-移动零">
+                  <i class="fa fa-chevron-left"></i> LeetCode283-移动零
+                </a>
+            </div>
+
+            <span class="post-nav-divider"></span>
+
+            <div class="post-nav-prev post-nav-item">
+            </div>
+          </div>
+      </footer>
+    
   </article>
+  
+  
+  
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-11-09T10:22:00+08:00"
-              content="2020-11-09">
-          11-09
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2020/11/09/jar%E5%8C%85%E5%92%8Cwar%E5%8C%85%E7%9A%84%E5%8C%BA%E5%88%AB/" itemprop="url">
-            <span itemprop="name">jar包和war包的区别</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-    </div>
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
